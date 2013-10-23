@@ -1,0 +1,1 @@
+powershell.exe -NoProfile -InputFormat none -ExecutionPolicy unrestricted -File "env_setting.ps1"

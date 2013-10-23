@@ -1,0 +1,444 @@
+MapR Hadoop Apache Patches Log
+[HADOOP-1722]  Make streaming to handle non-utf8 byte array
+[HADOOP-1849]  IPC server max queue size should be configurable
+[HADOOP-2141]  speculative execution start up condition based on completion time
+[HADOOP-2366]  Space in the value for dfs.data.dir can cause great problems
+[HADOOP-2721]  Use job control for tasks (and therefore for pipes and streaming)
+[HADOOP-2838]  Add HADOOP_LIBRARY_PATH config setting so Hadoop will include external directories for jni
+[HADOOP-3327]  Shuffling fetchers waited too long between map output fetch re-tries
+[HADOOP-3659]  Patch to allow hadoop native to compile on Mac OS X
+[HADOOP-4012]  Providing splitting support for bzip2 compressed files
+[HADOOP-4041]  IsolationRunner does not work as documented
+[HADOOP-4490]  Map and Reduce tasks should run as the user who submitted the job
+[HADOOP-4655]  FileSystem.CACHE should be ref-counted
+[HADOOP-4656]  Add a user to groups mapping service
+[HADOOP-4675]  Current Ganglia metrics implementation is incompatible with Ganglia 3.1
+[HADOOP-4829]  Allow FileSystem shutdown hook to be disabled
+[HADOOP-4842]  Streaming combiner should allow command, not just JavaClass
+[HADOOP-4930]  Implement setuid executable for Linux to assist in launching tasks as job owners
+[HADOOP-4933]  ConcurrentModificationException in JobHistory.java
+[HADOOP-5175]  Option to prohibit jars unpacking
+[HADOOP-5203]  TT's version build is too restrictive
+[HADOOP-5396]  Queue ACLs should be refreshed without requiring a restart of the job tracker
+[HADOOP-5419]  Provide a way for users to find out what operations they can do on which M/R queues
+[HADOOP-5420]  Support killing of process groups in LinuxTaskController binary
+[HADOOP-5442]  The job history display needs to be paged
+[HADOOP-5450]  Add support for application-specific typecodes to typed bytes
+[HADOOP-5469]  Exposing Hadoop metrics via HTTP
+[HADOOP-5476]  calling new SequenceFile.Reader(...) leaves an InputStream open, if the given sequence file is broken
+[HADOOP-5488]  HADOOP-2721 doesn't clean up descendant processes of a jvm that exits cleanly after running a task successfully
+[HADOOP-5494]  IFile.Reader should have a nextRawKey/nextRawValue
+[HADOOP-5528]  Binary partitioner
+[HADOOP-5582]  Hadoop Vaidya throws number format exception due to changes in the job history counters string format (escaped compact representation).
+[HADOOP-5592]  Hadoop Streaming - GzipCodec
+[HADOOP-5613]  change S3Exception to checked exception
+[HADOOP-5643]  Ability to blacklist tasktracker
+[HADOOP-5656]  Counter for S3N Read Bytes does not work
+[HADOOP-5675]  DistCp should not launch a job if it is not necessary
+[HADOOP-5733]  Add map/reduce slot capacity and lost map/reduce slot capacity to JobTracker metrics
+[HADOOP-5737]  UGI checks in testcases are broken
+[HADOOP-5738]  Split waiting tasks field in JobTracker metrics to individual tasks
+[HADOOP-5745]  Allow setting the default value of maxRunningJobs for all pools
+[HADOOP-5784]  The length of the heartbeat cycle should be configurable.
+[HADOOP-5801]  JobTracker should refresh the hosts list upon recovery
+[HADOOP-5805]  problem using top level s3 buckets as input/output directories
+[HADOOP-5861]  s3n files are not getting split by default
+[HADOOP-5879]  GzipCodec should read compression level etc from configuration
+[HADOOP-5913]  Allow administrators to be able to start and stop queues
+[HADOOP-5958]  Use JDK 1.6 File APIs in DF.java wherever possible
+[HADOOP-5976]  create script to provide classpath for external tools
+[HADOOP-5980]  LD_LIBRARY_PATH not passed to tasks spawned off by LinuxTaskController
+[HADOOP-5981]  HADOOP-2838 doesnt work as expected
+[HADOOP-6132]  RPC client opens an extra connection for VersionedProtocol
+[HADOOP-6133]  ReflectionUtils performance regression
+[HADOOP-6148]  Implement a pure Java CRC32 calculator
+[HADOOP-6161]  Add get/setEnum to Configuration
+[HADOOP-6166]  Improve PureJavaCrc32
+[HADOOP-6184]  Provide a configuration dump in json format.
+[HADOOP-6227]  Configuration does not lock parameters marked final if they have no value.
+[HADOOP-6234]  Permission configuration files should use octal and symbolic
+[HADOOP-6254]  s3n fails with SocketTimeoutException
+[HADOOP-6269]  Missing synchronization for defaultResources in Configuration.addResource
+[HADOOP-6279]  Add JVM memory usage to JvmMetrics
+[HADOOP-6284]  Any hadoop commands crashing jvm (SIGBUS)  when /tmp (tmpfs) is full
+[HADOOP-6299]  Use JAAS LoginContext for our login
+[HADOOP-6312]  Configuration sends too much data to log4j
+[HADOOP-6337]  Update FilterInitializer class to be more visible and take a conf for further development
+[HADOOP-6343]  Stack trace of any runtime exceptions should be recorded in the server logs.
+[HADOOP-6400]  Log errors getting Unix UGI
+[HADOOP-6408]  Add a /conf servlet to dump running configuration
+[HADOOP-6419]  Change RPC layer to support SASL based mutual authentication
+[HADOOP-6433]  Add AsyncDiskService that is used in both hdfs and mapreduce
+[HADOOP-6441]  Prevent remote CSS attacks in Hostname and UTF-7.
+[HADOOP-6453]  Hadoop wrapper script shouldn't ignore an existing JAVA_LIBRARY_PATH
+[HADOOP-6471]  StringBuffer -> StringBuilder - conversion of references as necessary
+[HADOOP-6496]  HttpServer sends wrong content-type for CSS files (and others)
+[HADOOP-6510]  doAs for proxy user
+[HADOOP-6521]  FsPermission:SetUMask not updated to use new-style umask setting.
+[HADOOP-6534]  LocalDirAllocator should use whitespace trimming configuration getters
+[HADOOP-6543]  Allow authentication-enabled RPC clients to connect to authentication-disabled RPC servers
+[HADOOP-6558]  archive does not work with distcp -update
+[HADOOP-6568]  Authorization for default servlets
+[HADOOP-6569]  FsShell#cat should avoid calling unecessary getFileStatus before opening a file to read
+[HADOOP-6572]  RPC responses may be out-of-order with respect to SASL
+[HADOOP-6577]  IPC server response buffer reset threshold should be configurable
+[HADOOP-6578]  Configuration should trim whitespace around a lot of value types
+[HADOOP-6599]  Split RPC metrics into summary and detailed metrics
+[HADOOP-6609]  Deadlock in DFSClient#getBlockLocations even with the security disabled
+[HADOOP-6613]  RPC server should check for version mismatch first
+[HADOOP-6627]  "Bad Connection to FS" message in FSShell should print message from the exception
+[HADOOP-6631]  FileUtil.fullyDelete() should continue to delete other files despite failure at any level.
+[HADOOP-6634]  AccessControlList uses full-principal names to verify acls causing queue-acls to fail
+[HADOOP-6637]  Benchmark overhead of RPC session establishment
+[HADOOP-6640]  FileSystem.get() does RPC retries within a static synchronized block
+[HADOOP-6644]  util.Shell getGROUPS_FOR_USER_COMMAND method name - should use common naming convention
+[HADOOP-6649]  login object in UGI should be inside the subject
+[HADOOP-6652]  ShellBasedUnixGroupsMapping shouldn't have a cache
+[HADOOP-6653]  NullPointerException in setupSaslConnection when browsing directories
+[HADOOP-6663]  BlockDecompressorStream get EOF exception when decompressing the file compressed from empty file
+[HADOOP-6667]  RPC.waitForProxy should retry through NoRouteToHostException
+[HADOOP-6669]  zlib.compress.level  ignored for DefaultCodec initialization
+[HADOOP-6670]  UserGroupInformation doesn't support use in hash tables
+[HADOOP-6674]  Performance Improvement in Secure RPC
+[HADOOP-6687]  user object in the subject in UGI  should be reused in case of a relogin.
+[HADOOP-6701]  Incorrect exit codes for "dfs -chown", "dfs -chgrp";
+[HADOOP-6706]  Relogin behavior for RPC clients could be improved
+[HADOOP-6710]  Symbolic umask for file creation is not consistent with posix
+[HADOOP-6714]  FsShell 'hadoop fs -text' does not support compression codecs
+[HADOOP-6718]  Client does not close connection when an exception happens during SASL negotiation
+[HADOOP-6722]  NetUtils.connect should check that it hasn't connected a socket to itself
+[HADOOP-6723]  unchecked exceptions thrown in IPC Connection orphan clients
+[HADOOP-6724]  IPC doesn't properly handle IOEs thrown by socket factory
+[HADOOP-6745]  adding some java doc to Server.RpcMetrics, UGI
+[HADOOP-6757]  NullPointerException for hadoop clients launched from streaming tasks
+[HADOOP-6760]  WebServer shouldn't increase port number in case of negative port setting caused by Jetty's race
+[HADOOP-6762]  exception while doing RPC I/O closes channel
+[HADOOP-6776]  UserGroupInformation.createProxyUser's javadoc is broken
+[HADOOP-6813]  Add a new newInstance method in FileSystem that takes a "user" as argument
+[HADOOP-6815]  refreshSuperUserGroupsConfiguration should use server side configuration for the refresh
+[HADOOP-6818]  Provide a JNI-based implementation of GroupMappingServiceProvider
+[HADOOP-6832]  Provide a web server plugin that uses a static user for the web UI
+[HADOOP-6833]  IPC leaks call parameters when exceptions thrown
+[HADOOP-6859]  Introduce additional statistics to FileSystem
+[HADOOP-6864]  Provide a JNI-based implementation of ShellBasedUnixGroupsNetgroupMapping (implementation of GroupMappingServiceProvider)
+[HADOOP-6881]  The efficient comparators aren't always used except for BytesWritable and Text
+[HADOOP-6899]  RawLocalFileSystem#setWorkingDir() does not work for relative names
+[HADOOP-6907]  Rpc client doesn't use the per-connection conf to figure out server's Kerberos principal
+[HADOOP-6925]  BZip2Codec incorrectly implements read()
+[HADOOP-6928]  Fix BooleanWritable comparator in 0.20
+[HADOOP-6943]  The GroupMappingServiceProvider interface should be public
+[HADOOP-6950]  Suggest that HADOOP_CLASSPATH should be preserved in hadoop-env.sh.template
+[HADOOP-6995]  Allow wildcards to be used in ProxyUsers configurations
+[HADOOP-6996]  Allow CodecFactory to return a codec object given a codec' class name
+[HADOOP-7082]  Configuration.writeXML should not hold lock while outputting
+[HADOOP-7101]  UserGroupInformation.getCurrentUser() fails when called from non-Hadoop JAAS context
+[HADOOP-7104]  Remove unnecessary DNS reverse lookups from RPC layer
+[HADOOP-7110]  Implement chmod with JNI
+[HADOOP-7114]  FsShell should dump all exceptions at DEBUG level
+[HADOOP-7115]  Add a cache for getpwuid_r and getpwgid_r calls
+[HADOOP-7118]  NPE in Configuration.writeXml
+[HADOOP-7122]  Timed out shell commands leak Timer threads
+[HADOOP-7145]  Configuration.getLocalPath should trim whitespace from the provided directories
+[HADOOP-7156]  getpwuid_r is not thread-safe on RHEL6
+[HADOOP-7172]  SecureIO should not check owner on non-secure clusters that have no native support
+[HADOOP-7173]  Remove unused fstat() call from NativeIO
+[HADOOP-7183]  WritableComparator.get should not cache comparator objects
+[HADOOP-7184]  Remove deprecated local.cache.size from core-default.xml
+[HADOOP-7189]  Add ability to enable 'debug' property in JAAS configuration
+[HADOOP-7206]  Integrate Snappy compression
+[HADOOP-7323]  Add capability to resolve compression codec based on codec name
+[HADOOP-7325]  hadoop command - do not accept class names starting with a hyphen
+[HADOOP-7428]  IPC connection is orphaned with null 'out' member 
+[HADOOP-7440]  HttpServer.getParameterValues throws NPE for missing parameters
+[HADOOP-7491]  hadoop command should respect HADOOP_OPTS when given a class name 
+[HADOOP-7854]  UGI getCurrentUser is not synchronized
+[MAPREDUCE-112]  Reduce Input Records and Reduce Output Records counters are not being set when using the new Mapreduce reducer API
+[MAPREDUCE-118]  Job.getJobID() will always return null
+[MAPREDUCE-144]  TaskMemoryManager should log process-tree's status while killing tasks.
+[MAPREDUCE-181]  Secure job submission
+[MAPREDUCE-211]  Provide a node health check script and run it periodically to check the node health status
+[MAPREDUCE-220]  Collecting cpu and memory usage for MapReduce tasks
+[MAPREDUCE-270]  TaskTracker could send an out-of-band heartbeat when the last running map/reduce completes
+[MAPREDUCE-277]  Job history counters should be avaible on the UI.
+[MAPREDUCE-339]  JobTracker should give preference to failed tasks over virgin tasks so as to terminate the job ASAP if it is eventually going to fail.
+[MAPREDUCE-364]  Change org.apache.hadoop.examples.MultiFileWordCount to use new mapreduce api.
+[MAPREDUCE-369]  Change org.apache.hadoop.mapred.lib.MultipleInputs to use new api.
+[MAPREDUCE-370]  Change org.apache.hadoop.mapred.lib.MultipleOutputs to use new api.
+[MAPREDUCE-415]  JobControl Job does always has an unassigned name
+[MAPREDUCE-416]  Move the completed jobs' history files to a DONE subdirectory inside the configured history directory
+[MAPREDUCE-461]  Enable ServicePlugins for the JobTracker
+[MAPREDUCE-463]  The job setup and cleanup tasks should be optional
+[MAPREDUCE-467]  Collect information about number of tasks succeeded / total per time unit for a tasktracker.
+[MAPREDUCE-476]  extend DistributedCache to work locally (LocalJobRunner)
+[MAPREDUCE-478]  separate jvm param for mapper and reducer
+[MAPREDUCE-516]  Fix the 'cluster drain' problem in the Capacity Scheduler wrt High RAM Jobs
+[MAPREDUCE-517]  The capacity-scheduler should assign multiple tasks per heartbeat
+[MAPREDUCE-521]  After JobTracker restart  Capacity Schduler does not schedules pending tasks from already running tasks.
+[MAPREDUCE-532]  Allow admins of the Capacity Scheduler to set a hard-limit on the capacity of a queue
+[MAPREDUCE-551]  Add preemption to the fair scheduler
+[MAPREDUCE-572]  If #link is missing from uri format of -cacheArchive then streaming does not throw error.
+[MAPREDUCE-655]  Change KeyValueLineRecordReader and KeyValueTextInputFormat to use new api.
+[MAPREDUCE-676]  Existing diagnostic rules fail for MAP ONLY jobs
+[MAPREDUCE-679]  XML-based metrics as JSP servlet for JobTracker
+[MAPREDUCE-680]  Reuse of Writable objects is improperly handled by MRUnit
+[MAPREDUCE-682]  Reserved tasktrackers should be removed when a node is globally blacklisted
+[MAPREDUCE-693]  Conf files not moved to "done" subdirectory after JT restart
+[MAPREDUCE-698]  Per-pool task limits for the fair scheduler
+[MAPREDUCE-706]  Support for FIFO pools in the fair scheduler
+[MAPREDUCE-707]  Provide a jobconf property for explicitly assigning a job to a pool
+[MAPREDUCE-709]  node health check script does not display the correct message on timeout
+[MAPREDUCE-714]  JobConf.findContainingJar unescapes unnecessarily on Linux
+[MAPREDUCE-716]  org.apache.hadoop.mapred.lib.db.DBInputformat not working with oracle
+[MAPREDUCE-722]  More slots are getting reserved for HiRAM job tasks then required
+[MAPREDUCE-732]  node health check script should not log "UNHEALTHY" status for every heartbeat in INFO mode
+[MAPREDUCE-734]  java.util.ConcurrentModificationException observed in unreserving slots for HiRam Jobs
+[MAPREDUCE-739]  Allow relative paths to be created inside archives.
+[MAPREDUCE-740]  Provide summary information per job once a job is finished.
+[MAPREDUCE-744]  Support in DistributedCache to share cache files with other users after HADOOP-4493
+[MAPREDUCE-754]  NPE in expiry thread when a TT is lost
+[MAPREDUCE-764]  TypedBytesInput's readRaw() does not preserve custom type codes
+[MAPREDUCE-768]  Configuration information should generate dump in a standard format.
+[MAPREDUCE-771]  Setup and cleanup tasks remain in UNASSIGNED state for a long time on tasktrackers with long running high RAM tasks
+[MAPREDUCE-782]  Use PureJavaCrc32 in mapreduce spills
+[MAPREDUCE-787]  -files, -archives should honor user given symlink path
+[MAPREDUCE-809]  Job summary logs show status of completed jobs as RUNNING
+[MAPREDUCE-814]  Move completed Job history files to HDFS
+[MAPREDUCE-817]  Add a cache for retired jobs with minimal job info and provide a way to access history file url
+[MAPREDUCE-825]  JobClient completion poll interval of 5s causes slow tests in local mode
+[MAPREDUCE-840]  DBInputFormat leaves open transaction
+[MAPREDUCE-842]  Per-job local data on the TaskTracker node should have right access-control
+[MAPREDUCE-856]  Localized files from DistributedCache should have right access-control
+[MAPREDUCE-871]  Job/Task local files have incorrect group ownership set by LinuxTaskController binary
+[MAPREDUCE-875]  Make DBRecordReader execute queries lazily
+[MAPREDUCE-885]  More efficient SQL queries for DBInputFormat
+[MAPREDUCE-890]  After HADOOP-4491, the user who started mapred system is not able to run job.
+[MAPREDUCE-896]  Users can set non-writable permissions on temporary files for TT and can abuse disk usage.
+[MAPREDUCE-899]  When using LinuxTaskController, localized files may become accessible to unintended users if permissions are misconfigured.
+[MAPREDUCE-927]  Cleanup of task-logs should happen in TaskTracker instead of the Child
+[MAPREDUCE-947]  OutputCommitter should have an abortJob method
+[MAPREDUCE-964]  Inaccurate values in jobSummary logs
+[MAPREDUCE-967]  TaskTracker does not need to fully unjar job jars
+[MAPREDUCE-968]  NPE in distcp encountered when placing _logs directory on S3FileSystem
+[MAPREDUCE-971]  distcp does not always remove distcp.tmp.dir
+[MAPREDUCE-1028]  Cleanup tasks are scheduled using high memory configuration, leaving tasks in unassigned state.
+[MAPREDUCE-1030]  Reduce tasks are getting starved in capacity scheduler
+[MAPREDUCE-1048]  Show total slot usage in cluster summary on jobtracker webui
+[MAPREDUCE-1059]  distcp can generate uneven map task assignments
+[MAPREDUCE-1083]   Use the user-to-groups mapping service in the JobTracker
+[MAPREDUCE-1085]  For tasks, "ulimit -v -1" is being run when user doesn't specify mapred.child.ulimit
+[MAPREDUCE-1086]  hadoop commands in streaming tasks are trying to write to tasktracker's log
+[MAPREDUCE-1088]  JobHistory files should have narrower 0600 perms
+[MAPREDUCE-1089]  Fair Scheduler preemption triggers NPE when tasks are scheduled but not running
+[MAPREDUCE-1090]  Modify log statement in Tasktracker log related to memory monitoring to include attempt id.
+[MAPREDUCE-1098]  Incorrect synchronization in DistributedCache causes TaskTrackers to freeze up during localization of Cache for tasks.
+[MAPREDUCE-1100]  User's task-logs filling up local disks on the TaskTrackers
+[MAPREDUCE-1103]  Additional JobTracker metrics
+[MAPREDUCE-1105]  CapacityScheduler: It should be possible to set queue hard-limit beyond it's actual capacity
+[MAPREDUCE-1118]  Capacity Scheduler scheduling information is hard to read / should be tabular format
+[MAPREDUCE-1131]  Using profilers other than hprof can cause JobClient to report job failure
+[MAPREDUCE-1140]  Per cache-file refcount can become negative when tasks release distributed-cache files
+[MAPREDUCE-1143]  runningMapTasks counter is not properly decremented in case of failed Tasks.
+[MAPREDUCE-1155]  Streaming tests swallow exceptions
+[MAPREDUCE-1158]  running_maps is not decremented when the tasks of a job is killed/failed
+[MAPREDUCE-1160]  Two log statements at INFO level fill up jobtracker logs
+[MAPREDUCE-1171]  Lots of fetch failures
+[MAPREDUCE-1178]  MultipleInputs fails with ClassCastException
+[MAPREDUCE-1185]  URL to JT webconsole for running job and job history should be the same
+[MAPREDUCE-1186]  While localizing a DistributedCache file, TT sets permissions recursively on the whole base-dir
+[MAPREDUCE-1196]  MAPREDUCE-947 incompatibly changed FileOutputCommitter
+[MAPREDUCE-1198]  Alternatively schedule different types of tasks in fair share scheduler
+[MAPREDUCE-1213]  TaskTrackers restart is very slow because it deletes distributed cache directory synchronously
+[MAPREDUCE-1219]  JobTracker Metrics causes undue load on JobTracker
+[MAPREDUCE-1221]  Kill tasks on a node if the free physical memory on that machine falls below a configured threshold
+[MAPREDUCE-1231]  Distcp is very slow
+[MAPREDUCE-1250]  Refactor job token to use a common token interface
+[MAPREDUCE-1258]  Fair scheduler event log not logging job info
+[MAPREDUCE-1285]  DistCp cannot handle -delete if destination is local filesystem
+[MAPREDUCE-1288]  DistributedCache localizes only once per cache URI
+[MAPREDUCE-1293]  AutoInputFormat doesn't work with non-default FileSystems
+[MAPREDUCE-1302]  TrackerDistributedCacheManager can delete file asynchronously
+[MAPREDUCE-1304]  Add counters for task time spent in GC
+[MAPREDUCE-1307]  Introduce the concept of Job Permissions
+[MAPREDUCE-1313]  NPE in FieldFormatter if escape character is set and field is null
+[MAPREDUCE-1316]  JobTracker holds stale references to retired jobs via unreported tasks
+[MAPREDUCE-1342]  Potential JT deadlock in faulty TT tracking
+[MAPREDUCE-1354]  Incremental enhancements to the JobTracker for better scalability
+[MAPREDUCE-1372]  ConcurrentModificationException in JobInProgress
+[MAPREDUCE-1378]  Args in job details links on jobhistory.jsp are not URL encoded
+[MAPREDUCE-1382]  MRAsyncDiscService should tolerate missing local.dir
+[MAPREDUCE-1397]  NullPointerException observed during task failures
+[MAPREDUCE-1398]  TaskLauncher remains stuck on tasks waiting for free nodes even if task is killed.
+[MAPREDUCE-1399]  The archive command shows a null error message
+[MAPREDUCE-1403]  Save file-sizes of each of the artifacts in DistributedCache in the JobConf
+[MAPREDUCE-1421]  LinuxTaskController tests failing on trunk after the commit of MAPREDUCE-1385
+[MAPREDUCE-1422]  Changing permissions of files/dirs under job-work-dir may be needed sothat cleaning up of job-dir in all mapred-local-directories succeeds always
+[MAPREDUCE-1423]  Improve performance of CombineFileInputFormat when multiple pools are configured
+[MAPREDUCE-1425]  archive throws OutOfMemoryError
+[MAPREDUCE-1435]  symlinks in cwd of the task are not handled properly after MAPREDUCE-896
+[MAPREDUCE-1436]  Deadlock in preemption code in fair scheduler
+[MAPREDUCE-1440]  MapReduce should use the short form of the user names
+[MAPREDUCE-1441]  Configuration of directory lists should trim whitespace
+[MAPREDUCE-1442]  StackOverflowError when JobHistory parses a really long line
+[MAPREDUCE-1443]  DBInputFormat can leak connections
+[MAPREDUCE-1454]  The servlets should quote server generated strings sent in the response
+[MAPREDUCE-1455]  Authorization for servlets
+[MAPREDUCE-1457]  For secure job execution, couple of more UserGroupInformation.doAs needs to be added
+[MAPREDUCE-1464]  In JobTokenIdentifier change method getUsername to getUser which returns UGI
+[MAPREDUCE-1466]  FileInputFormat should save #input-files in JobConf
+[MAPREDUCE-1476]  committer.needsTaskCommit should not be called for a task cleanup attempt
+[MAPREDUCE-1480]  CombineFileRecordReader does not properly initialize child RecordReader
+[MAPREDUCE-1493]  Authorization for job-history pages
+[MAPREDUCE-1501]  FileInputFormat to support multi-level/recursive directory listing
+[MAPREDUCE-1503]  Push HADOOP-6551 into MapReduce
+[MAPREDUCE-1505]  Cluster class should create the rpc client only when needed
+[MAPREDUCE-1521]  Protection against incorrectly configured reduces
+[MAPREDUCE-1522]  FileInputFormat may change the file system of an input path
+[MAPREDUCE-1526]  Cache the job related information while submitting the job , this would avoid many RPC calls to JobTracker.
+[MAPREDUCE-1533]  Reduce or remove usage of String.format() usage in CapacityTaskScheduler.updateQSIObjects and Counters.makeEscapedString()
+[MAPREDUCE-1538]  TrackerDistributedCacheManager can fail because the number of subdirectories reaches system limit
+[MAPREDUCE-1543]  Log messages of JobACLsManager should use security logging of HADOOP-6586
+[MAPREDUCE-1545]  Add 'first-task-launched' to job-summary
+[MAPREDUCE-1550]  UGI.doAs should not be used for getting the history file of jobs
+[MAPREDUCE-1563]  Task diagnostic info would get missed sometimes.
+[MAPREDUCE-1570]  Shuffle stage - Key and Group Comparators
+[MAPREDUCE-1607]  Task controller may not set permissions for a task cleanup attempt's log directory
+[MAPREDUCE-1609]  TaskTracker.localizeJob should not set permissions on job log directory recursively
+[MAPREDUCE-1611]  Refresh nodes and refresh queues doesnt work with service authorization enabled
+[MAPREDUCE-1612]  job conf file is not accessible from job history web page
+[MAPREDUCE-1621]  Streaming's TextOutputReader.getLastOutput throws NPE if it has never read any output
+[MAPREDUCE-1635]  ResourceEstimator does not work after MAPREDUCE-842
+[MAPREDUCE-1641]  Job submission should fail if same uri is added for mapred.cache.files and mapred.cache.archives
+[MAPREDUCE-1656]  JobStory should provide queue info.
+[MAPREDUCE-1657]  After task logs directory is deleted, tasklog servlet displays wrong error message about job ACLs
+[MAPREDUCE-1664]  Job Acls affect Queue Acls
+[MAPREDUCE-1680]  Add a metrics to track the number of heartbeats processed
+[MAPREDUCE-1682]  Tasks should not be scheduled after tip is killed/failed.
+[MAPREDUCE-1683]  Remove JNI calls from ClusterStatus cstr
+[MAPREDUCE-1699]  JobHistory shouldn't be disabled for any reason
+[MAPREDUCE-1707]  TaskRunner can get NPE in getting ugi from TaskTracker
+[MAPREDUCE-1716]  Truncate logs of finished tasks to prevent node thrash due to excessive logging
+[MAPREDUCE-1733]  Authentication between pipes processes and java counterparts.
+[MAPREDUCE-1734]  Un-deprecate the old MapReduce API in the 0.20 branch
+[MAPREDUCE-1744]  DistributedCache creates its own FileSytem instance when adding a file/archive to the path
+[MAPREDUCE-1754]  Replace mapred.persmissions.supergroup with an acl : mapreduce.cluster.administrators
+[MAPREDUCE-1759]  Exception message for unauthorized user doing killJob, killTask, setJobPriority needs to be improved
+[MAPREDUCE-1778]  CompletedJobStatusStore initialization should fail if {mapred.job.tracker.persist.jobstatus.dir} is unwritable
+[MAPREDUCE-1784]  IFile should check for null compressor
+[MAPREDUCE-1785]  Add streaming config option for not emitting the key
+[MAPREDUCE-1813]  NPE in PipeMapred.MRErrorThread
+[MAPREDUCE-1832]  Support for file sizes less than 1MB in DFSIO benchmark.
+[MAPREDUCE-1845]  FairScheduler.tasksToPeempt() can return negative number
+[MAPREDUCE-1850]  Include job submit host information (name and ip) in jobconf and jobdetails display
+[MAPREDUCE-1853]  MultipleOutputs does not cache TaskAttemptContext
+[MAPREDUCE-1868]  Add read timeout on userlog pull
+[MAPREDUCE-1872]  Re-think (user|queue) limits on (tasks|jobs) in the CapacityScheduler
+[MAPREDUCE-1887]  MRAsyncDiskService does not properly absolutize volume root paths
+[MAPREDUCE-1900]  MapReduce daemons should close FileSystems that are not needed anymore
+[MAPREDUCE-1914]  TrackerDistributedCacheManager never cleans its input directories
+[MAPREDUCE-1938]  Ability for having user's classes take precedence over the system classes for tasks' classpath
+[MAPREDUCE-1960]  Limit the size of jobconf.
+[MAPREDUCE-1961]  ConcurrentModificationException when shutting down Gridmix
+[MAPREDUCE-1985]  java.lang.ArrayIndexOutOfBoundsException in analysejobhistory.jsp of jobs with 0 maps
+[MAPREDUCE-2023]  TestDFSIO read test may not read specified bytes.
+[MAPREDUCE-2082]  Race condition in writing the jobtoken password file when launching pipes jobs
+[MAPREDUCE-2096]  Secure local filesystem IO from symlink vulnerabilities
+[MAPREDUCE-2103]  task-controller shouldn't require o-r permissions
+[MAPREDUCE-2157]  safely handle InterruptedException and interrupted status in MR code
+[MAPREDUCE-2178]  Race condition in LinuxTaskController permissions handling
+[MAPREDUCE-2219]  JT should not try to remove mapred.system.dir during startup
+[MAPREDUCE-2234]  If Localizer can't create task log directory, it should fail on the spot
+[MAPREDUCE-2235]  JobTracker "over-synchronization" makes it hang up in certain cases
+[MAPREDUCE-2242]  LinuxTaskController doesn't properly escape environment variables
+[MAPREDUCE-2253]  Servlets should specify content type
+[MAPREDUCE-2254]  Allow setting of end-of-record delimiter for TextInputFormat
+[MAPREDUCE-2256]  FairScheduler fairshare preemption from multiple pools may preempt all tasks from one pool causing that pool to go below fairshare.
+[MAPREDUCE-2289]  Permissions race can make getStagingDir fail on local filesystem
+[MAPREDUCE-2321]  TT should fail to start on secure cluster when SecureIO isn't available
+[MAPREDUCE-2323]  Add metrics to the fair scheduler
+[MAPREDUCE-2328]  memory-related configurations missing from mapred-default.xml
+[MAPREDUCE-2332]  Improve error messages when MR dirs on local FS have bad ownership
+[MAPREDUCE-2351]  mapred.job.tracker.history.completed.location should support an arbitrary filesystem URI
+[MAPREDUCE-2353]  Make the MR changes to reflect the API changes in SecureIO library
+[MAPREDUCE-2356]  A task succeeded even though there were errors on all attempts.
+[MAPREDUCE-2364]  Shouldn't hold lock on rjob while localizing resources.
+[MAPREDUCE-2366]  TaskTracker can't retrieve stdout and stderr from web UI
+[MAPREDUCE-2371]  TaskLogsTruncater does not need to check log ownership when running as Child
+[MAPREDUCE-2372]  TaskLogAppender mechanism shouldn't be set in log4j.properties
+[MAPREDUCE-2373]  When tasks exit with a nonzero exit status, task runner should log the stderr as well as stdout
+[MAPREDUCE-2374]  Should not use PrintWriter to write taskjvm.sh
+[MAPREDUCE-2377]  task-controller fails to parse configuration if it doesn't end in \n
+[MAPREDUCE-2379]  Distributed cache sizing configurations are missing from mapred-default.xml
+[MAPREDUCE-2409]  Distributed Cache does not differentiate between file /archive for files with the same path
+[MAPREDUCE-2411]  When you submit a job to a queue with no ACLs you get an inscrutible NPE
+[MAPREDUCE-2429]  Check jvmid during task status report
+[MAPREDUCE-2447]  Set JvmContext sooner for a task - MR2429
+[MAPREDUCE-2457]  job submission should inject group.name (on the JT side)
+[MAPREDUCE-2472]  Extra whitespace in mapred.child.java.opts breaks JVM initialization
+[MAPREDUCE-2555]  JvmInvalidate errors in the gridmix TT logs
+[MAPREDUCE-2610]  Inconsistent API JobClient.getQueueAclsForCurrentUser
+[MAPREDUCE-2651]  Race condition in Linux Task Controller for job log directory creation
+[MAPREDUCE-2729]  Reducers  are always counted having "pending tasks" even if they can't be scheduled yet because not enough of their mappers have completed 
+[MAPREDUCE-2846]  a small % of all tasks fail with DefaultTaskController
+[MAPREDUCE-3612]  Task.TaskReporter.done method blocked for some time when task is finishing
+[MAPREDUCE-3278]  Fix a busy loop in ReduceTask that would cause 100% cpu utilization during the fetch phase.
+[MAPREDUCE-3343]  TaskTracker Out of Memory because of distributed cache.
+[HADOOP-6614]     RunJar should provide more diags when it can't create a temp file.
+[MAPREDUCE-936]   Allow a load difference in fairshare scheduler
+[MAPREDUCE-3789   CapacityTaskScheduler may perform unnecessary reservations in heterogenous tracker environments
+[DISTRO-373]      UserGroupInformation "JAAS Configuration already set"
+[MAPREDUCE-3607]  Port missing new API mapreduce lib classes to 1.x.
+[MAPREDUCE-3997]  jobhistory.jsp cuts off the job name at the first underscore of the job name
+[MAPREDUCE-157]   Add configuration to control maximum age of job history files (mapreduce.jobhistory.max-age-ms).
+[HADOOP-5226]     Add license headers to html and jsp files.
+[HADOOP-6056]     Use java.net.preferIPv4Stack to force IPv4.
+[MAPREDUCE-1109]  ConcurrentModificationException in jobtracker.jsp
+[MAPREDUCE-4001]  Improve MAPREDUCE-3789's fix logic by looking at job's slot demands instead.
+[MAPREDUCE-1740]  NPE in getMatchingLevelForNodes when node locations are
+[HADOOP-8154]     DNS#getIPs shouldn't silently return the local host IP
+[HADOOP-7806]     Support binding to sub-interfaces.
+[HADOOP-7030]     Add TableMapping topology implementation to read host to rack mapping from a file.
+[HADOOP-7982]     UserGroupInformation fails to login if thread's context classloader can't load HadoopLoginModule
+[HDFS-3129]       NetworkTopology: getLeaf should check for invalid topologies. Contributed by Colin Patrick McCabe
+[MAPREDUCE-2456]  Log the reduce taskID and associated TaskTrackers with failed fetch notifications in the JobTracker log.
+[MAPREDUCE-4012   Hadoop Job setup error leaves no useful info to users. (tgraves)
+[HADOOP-8314]     HttpServer#hasAdminAccess should return false if authorization is enabled but user is not authenticated. (tucu)
+[HADOOP-8350]     Improve NetUtils.getInputStream to return a stream which has a tunable timeout.
+[MAPREDUCE-2705]  tasks localized and launched serially by TaskLauncher - causing other tasks to be delayed
+[MAPREDUCE-4469]  Resource calculation in child tasks is CPU-heavy
+[MAPREDUCE-1194]  mapred.reduce.slowstart.completed.maps > 1 makes jobs stuck
+[HADOOP-8069]     TCP_NODELAY by default for IPC
+[HADOOP-8611]     Allow fall-back to the shell-based implementation when JNI-based users-group mapping fails
+[MAPREDUCE-4464]  Reduce tasks failing with NullPointerException in ConcurrentHashMap.get()
+[HADOOP-8329]     HADOOP-8329. Build fails with Java 7.
+[MAPREDUCE-336]   The logging level of the tasks should be configurable by the job
+[HADOOP-8430]     Backport new FileSystem methods introduced by HADOOP-8014 to branch-1
+[HADOOP-6546]     BloomMapFile can return false negatives
+[HADOOP-8151]     Error handling in snappy decompressor throws invalid exceptions
+[MAPREDUCE-4359]  Potential deadlock in Counters
+[MAPREDUCE-2452]  Delegation token cancellation shouldn't hold global JobTracker lock
+[HADOOP-6642]     Fix javac, javadoc, findbugs warnings
+[HADOOP-7539]     merge hadoop archive goodness from trunk to .20
+[HADOOP-7602]     wordcount, sort etc on har files fails with NPE
+[HADOOP-7594]     Support HTTP REST in HttpServer
+[HADOOP-7661]     FileSystem.getCanonicalServiceName throws NPE for any file system uri that doesn't have an authority.
+[HADOOP-7649]     TestMapredGroupMappingServiceRefresh and TestRefreshUserMappings fail after HADOOP-7625
+[HADOOP-7215]     RPC clients must connect over a network interface corresponding to the host name in the client's kerberos principal key
+[HADOOP-7509]     Improve message when Authentication is required
+[HADOOP-8445]     Token should not print the password in toString
+[MAPREDUCE-3993]  Graceful handling of codec errors during decompression
+[MAPREDUCE-4385]  FairScheduler.maxTasksToAssign() should check for fairscheduler.assignmultiple.maps < TaskTracker.availableSlots
+[MAPREDUCE-2779]  JobSplitWriter.java can't handle large job.split file
+[HADOOP-8587]     HarFileSystem access of harMetaCache isn't threadsafe
+[HADOOP-7836]     TestSaslRPC#testDigestAuthMethodHostBasedToken fails with hostname localhost.localdomain
+[MAPREDUCE-4355]  Add RunningJob.getJobStatus()
+[HADOOP-6975]     integer overflow in S3InputStream for blocks > 2GB
+[HADOOP-8552]     Conflict: Same security.log.file for multiple users.
+[MAPREDUCE-4154]  streaming MR job succeeds even if the streaming command fails
+[HADOOP-8612]     Backport HADOOP-8599 to branch-1 (Non empty response when read beyond eof)
+[MAPREDUCE-4036]  Streaming TestUlimit fails on CentOS 6
+[MAPREDUCE-4415]  Backport the Job.getInstance methods from MAPREDUCE-1505 to branch-1
+[MAPREDUCE-639]   Update the TeraSort to reflect the new benchmark rules for '09
+[MAPREDUCE-2340]  optimize JobInProgress.initTasks
+[HADOOP-6835]     Support concatenated gzip files
+[MAPREDUCE-4986]  Document the locality effect of preemption timeouts in FairScheduler when mapred.fairscheduler.preemption is off
+
